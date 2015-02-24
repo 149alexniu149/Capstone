@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150223234812) do
+ActiveRecord::Schema.define(version: 20150222195941) do
 
   create_table "bitfinexes", force: :cascade do |t|
     t.string   "timestamp"
@@ -27,15 +27,6 @@ ActiveRecord::Schema.define(version: 20150223234812) do
     t.string   "timestamp"
     t.float    "avgprice"
     t.float    "bid"
-    t.float    "ask"
-    t.integer  "volume"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "btces", force: :cascade do |t|
-    t.integer  "timestamp"
-    t.float    "avgprice"
     t.float    "ask"
     t.integer  "volume"
     t.datetime "created_at", null: false

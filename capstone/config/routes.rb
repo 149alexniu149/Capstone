@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :btces
 
-  get 'bitfinexes/index'
+  get 'bitfinexes/new'
   resources :bitstamps
 
   resources :bitfinexes
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'bitfinexes#index'
+  root 'bitfinexes#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
