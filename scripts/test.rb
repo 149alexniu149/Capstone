@@ -1,1 +1,1 @@
-result= exec("python bitfinexAPI.py" )
+exec("python bitfinexAPI.py" )
