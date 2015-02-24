@@ -24,7 +24,8 @@ class BitfinexesController < ApplicationController
   # POST /bitfinexes
   # POST /bitfinexes.json
   def create
-    @bitfinex = Bitfinex.new(eval("{timestamp: '420', avgprice: 3.4, bid: 4.3, ask: 9.8, volume: 1}"))
+	newdata = exec("python C:\\Users\\Alex\\Documents\\GitHub\\Capstone\\scripts\\bitfinexAPI.py")
+    @bitfinex = Bitfinex.new(eval(newdata))
 
     respond_to do |format|
       if @bitfinex.save
