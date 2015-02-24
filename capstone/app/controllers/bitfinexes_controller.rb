@@ -24,7 +24,7 @@ class BitfinexesController < ApplicationController
   # POST /bitfinexes
   # POST /bitfinexes.json
   def create
-    @bitfinex = Bitfinex.new(bitfinex_params)
+    @bitfinex = Bitfinex.new(eval("{timestamp: '420', avgprice: 3.4, bid: 4.3, ask: 9.8, volume: 1}"))
 
     respond_to do |format|
       if @bitfinex.save
@@ -70,6 +70,7 @@ class BitfinexesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def bitfinex_params
       params.require(:bitfinex).permit(:timestamp, :avgprice, :bid, :ask, :volume)
+	  #return { "timestamp": 1, "avgprice": 3.4, "bid": 4.3, "ask": 9.8, "volume": 12  } 
     end
 	
 end
