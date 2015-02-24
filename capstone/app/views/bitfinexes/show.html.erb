@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Timestamp:</strong>
+  <%= @bitfinex.timestamp %>
+</p>
+
+<p>
+  <strong>Avgprice:</strong>
+  <%= @bitfinex.avgprice %>
+</p>
+
+<p>
+  <strong>Bid:</strong>
+  <%= @bitfinex.bid %>
+</p>
+
+<p>
+  <strong>Ask:</strong>
+  <%= @bitfinex.ask %>
+</p>
+
+<p>
+  <strong>Volume:</strong>
+  <%= @bitfinex.volume %>
+</p>
+
+<%= link_to 'Edit', edit_bitfinex_path(@bitfinex) %> |
+<%= link_to 'Back', bitfinexes_path %>

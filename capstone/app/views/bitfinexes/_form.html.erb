@@ -1,0 +1,37 @@
+<%= form_for(@bitfinex) do |f| %>
+  <% if @bitfinex.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bitfinex.errors.count, "error") %> prohibited this bitfinex from being saved:</h2>
+
+      <ul>
+      <% @bitfinex.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :timestamp %><br>
+    <%= f.text_field :timestamp %>
+  </div>
+  <div class="field">
+    <%= f.label :avgprice %><br>
+    <%= f.text_field :avgprice %>
+  </div>
+  <div class="field">
+    <%= f.label :bid %><br>
+    <%= f.text_field :bid %>
+  </div>
+  <div class="field">
+    <%= f.label :ask %><br>
+    <%= f.text_field :ask %>
+  </div>
+  <div class="field">
+    <%= f.label :volume %><br>
+    <%= f.text_field :volume %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
