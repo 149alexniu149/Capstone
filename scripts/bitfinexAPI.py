@@ -2,7 +2,7 @@
 import time, json, requests
 #timestamp is a dummy get system time
 #clean this code up
-dbparams=["timestamp: '1',",'avgprice: ','bid: ','ask: ','volume: ']
+dbparams=["timestamp:'1',",'avgprice:','bid:','ask:','volume:']
 apiparams=['mid','bid','ask','volume']
 dataList=[]
 s="{"+dbparams[0]
