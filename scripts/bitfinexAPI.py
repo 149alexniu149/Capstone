@@ -2,7 +2,7 @@
 import time, json, requests
 #timestamp is a dummy get system time
 #clean this code up
-<<<<<<< HEAD
+#<<<<<<< HEAD
 dbparams=["timestamp:'1',",'avgprice:','bid:','ask:','volume:']
 apiparams=['mid','bid','ask','volume']
 dataList=[]
@@ -19,6 +19,7 @@ for i in apiparams:
     counter=counter+1
 s=s+"}"
 print s
+"""
 =======
 def pull():
 	dbparams=["timestamp: '1', ",'avgprice: ','bid: ','ask: ','volume: ']
@@ -38,6 +39,6 @@ def pull():
 	s=s+"}"
 	return s
 pull()
->>>>>>> origin/master
+>>>>>>> origin/master"""
 
 

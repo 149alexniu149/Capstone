@@ -24,7 +24,7 @@ class BitfinexesController < ApplicationController
   # POST /bitfinexes
   # POST /bitfinexes.json
   def create
-	newdata = exec("python C:\\Users\\Alex\\Documents\\GitHub\\Capstone\\scripts\\bitfinexAPI.py")
+	newdata =`python C:\\Users\\Evan\\Documents\\Github\\Capstone\\scripts\\bitfinexAPI.py`
     @bitfinex = Bitfinex.new(eval(newdata))
 
     respond_to do |format|

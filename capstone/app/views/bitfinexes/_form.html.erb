@@ -9,8 +9,11 @@
       <% end %>
       </ul>
     </div>
+	
   <% end %>
 
+  
+  
   <!--<div class="field">
     <%= f.label :timestamp %><br>
     <%= f.text_field :timestamp %>
@@ -34,4 +37,12 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+  
+  <!-- creates 10 new records-->
+  <%i=0%>
+  <%while i<10%>
+	<%@bitfinex = Bitfinex.create%>
+	<%i=i+1%>
+  <%end%>
+  
 <% end %>
