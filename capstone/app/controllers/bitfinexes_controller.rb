@@ -18,11 +18,18 @@ class BitfinexesController < ApplicationController
   def new
     @bitfinex = Bitfinex.new
 	puts "-----------------------------New Done---------------------------"
+<<<<<<< HEAD
 	newdata =`python C:\\Users\\Evan\\Documents\\Github\\Capstone\\scripts\\bitfinexAPI.py`
 	puts "------------------------Create Start---------------------------------" 
     @bitfinex = Bitfinex.new(eval(newdata))
 	@bitfinex.save
 	"""
+=======
+	newdata =`python C:\\Users\\Alex\\Documents\\Github\\Capstone\\scripts\\bitfinexAPI.py`
+	puts "------------------------Create Start---------------------------------" 
+    @bitfinex = Bitfinex.new(eval(newdata))
+
+>>>>>>> origin/master
     respond_to do |format|
       if @bitfinex.save
         format.html { redirect_to @bitfinex, notice: 'Bitfinex was successfully created.' }
@@ -31,7 +38,11 @@ class BitfinexesController < ApplicationController
         format.html { render :new }
         format.json { render json: @bitfinex.errors, status: :unprocessable_entity }
       end
+<<<<<<< HEAD
     end """
+=======
+    end
+>>>>>>> origin/master
 	puts "------------------------Create Done---------------------------------" 
   end
 
@@ -42,7 +53,7 @@ class BitfinexesController < ApplicationController
   # POST /bitfinexes
   # POST /bitfinexes.json
   def create
-	newdata =`python C:\\Users\\Evan\\Documents\\Github\\Capstone\\scripts\\bitfinexAPI.py`
+	newdata =`python C:\\Users\\Alex\\Documents\\Github\\Capstone\\scripts\\bitfinexAPI.py`
 	puts "------------------------Create Start---------------------------------" 
     @bitfinex = Bitfinex.new(eval(newdata))
 
