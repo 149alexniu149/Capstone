@@ -10,7 +10,7 @@
       </ul>
     </div>
 	
-  <% end %>
+  <% end %> 
 
   
   
@@ -38,11 +38,13 @@
     <%= f.submit %>
   </div>
   
-  <!-- creates 10 new records-->
+  <!-- creates 2 new records-->
   <%i=0%>
-  <%while i<10%>
-	<%@bitfinex = Bitfinex.create%>
+  <%while i<2%>
 	<%i=i+1%>
+	
+	
+	<%=@bitfinex = Bitfinex.create%>
   <%end%>
   
 <% end %>
