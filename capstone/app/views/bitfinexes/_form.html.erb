@@ -39,7 +39,21 @@
   </div>
   
   <!-- creates 2 new records-->
+  <%i=0%>
+<<<<<<< HEAD
+  <%while i!=10%>
+	<%i-i+1%>
 	<%puts "--------------------------API Call---------------------"%>
+=======
+  <%while i<2%>
+	<%i=i+1%>
 	
+	<%=@bitfinex = Bitfinex.new%>
+>>>>>>> origin/master
 	<%=@bitfinex = Bitfinex.create%>
- <%end%>
+	<%sleep 3%>
+
+	
+  <%end%>
+  
+<% end %>
