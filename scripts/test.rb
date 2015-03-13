@@ -1,1 +1,1 @@
-exec("python bitfinexAPI.py" )
+print "hello\n"

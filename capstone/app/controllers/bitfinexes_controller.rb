@@ -5,6 +5,8 @@ class BitfinexesController < ApplicationController
   # GET /bitfinexes.json
   def index
     @bitfinexes = Bitfinex.all
+	puts "------------------------Update Done---------------------------------" 
+
   end
 
   # GET /bitfinexes/1
@@ -15,6 +17,7 @@ class BitfinexesController < ApplicationController
   # GET /bitfinexes/new
   def new
     @bitfinex = Bitfinex.new
+	puts "-----------------------------New Done---------------------------"
   end
 
   # GET /bitfinexes/1/edit
@@ -24,7 +27,8 @@ class BitfinexesController < ApplicationController
   # POST /bitfinexes
   # POST /bitfinexes.json
   def create
-	newdata = exec("python C:\\Users\\Alex\\Documents\\GitHub\\Capstone\\scripts\\bitfinexAPI.py")
+	newdata =`python C:\\Users\\Evan\\Documents\\Github\\Capstone\\scripts\\bitfinexAPI.py`
+	puts "------------------------Create Start---------------------------------" 
     @bitfinex = Bitfinex.new(eval(newdata))
 
     respond_to do |format|
@@ -36,6 +40,7 @@ class BitfinexesController < ApplicationController
         format.json { render json: @bitfinex.errors, status: :unprocessable_entity }
       end
     end
+	puts "------------------------Create Done---------------------------------" 
   end
 
   # PATCH/PUT /bitfinexes/1
@@ -50,6 +55,7 @@ class BitfinexesController < ApplicationController
         format.json { render json: @bitfinex.errors, status: :unprocessable_entity }
       end
     end
+		puts "------------------------Update Done---------------------------------" 
   end
 
   # DELETE /bitfinexes/1
@@ -60,12 +66,14 @@ class BitfinexesController < ApplicationController
       format.html { redirect_to bitfinexes_url, notice: 'Bitfinex was successfully destroyed.' }
       format.json { head :no_content }
     end
+		puts "------------------------Destroy Done---------------------------------" 
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_bitfinex
       @bitfinex = Bitfinex.find(params[:id])
+	  	puts "------------------------Set Done---------------------------------" 
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
