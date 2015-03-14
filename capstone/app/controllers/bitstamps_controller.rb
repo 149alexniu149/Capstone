@@ -14,7 +14,29 @@ class BitstampsController < ApplicationController
 
   # GET /bitstamps/new
   def new
-    @bitstamp = Bitstamp.new
+    
+	
+	i=0
+	while i < 10
+		i=i+1
+		puts "-----------------------------New Done---------------------------"
+		newdata =`python C:\\Users\\Evan\\Documents\\Github\\Capstone\\scripts\\bitstampAPI.py`
+		puts "------------------------Create Start---------------------------------" 
+		@bitstamp = Bitstamp.new(eval(newdata))
+		@bitstamp.save
+		sleep(3)
+	end
+	"""
+    respond_to do |format|
+      if @bitstamp.save
+        format.html { redirect_to @bitstamp, notice: 'Bitstamp was successfully created.' }
+        format.json { render :show, status: :created, location: @bitstamp }
+      else
+        format.html { render :new }
+        format.json { render json: @bitstamp.errors, status: :unprocessable_entity }
+      end
+    end
+	"""
   end
 
   # GET /bitstamps/1/edit

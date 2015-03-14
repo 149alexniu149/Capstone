@@ -19,7 +19,7 @@ class BitfinexesController < ApplicationController
 	i=0
 	while i < 10
 		i=i+1
-		@bitfinex = Bitfinex.new
+		#@bitfinex = Bitfinex.new
 		puts "-----------------------------New Done---------------------------"
 		newdata =`python C:\\Users\\Evan\\Documents\\Github\\Capstone\\scripts\\bitfinexAPI.py`
 		puts "------------------------Create Start---------------------------------" 
