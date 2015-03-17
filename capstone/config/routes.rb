@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get 'bitfinexes/new'
   get 'bitstamps/new'
   resources :bitstamps
-
   resources :bitfinexes
 	  # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

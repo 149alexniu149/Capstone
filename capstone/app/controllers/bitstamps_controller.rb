@@ -10,6 +10,7 @@ class BitstampsController < ApplicationController
   # GET /bitstamps/1
   # GET /bitstamps/1.json
   def show
+	puts "--------------------------------------TESTING-------------------------------------------------------"
   end
 
   # GET /bitstamps/new
@@ -17,14 +18,14 @@ class BitstampsController < ApplicationController
     
 	
 	i=0
-	while i < 10
-		i=i+1
-		puts "-----------------------------New Done---------------------------"
+	while i < 2
+		
+		puts "-----------------------------Bitstamp New---------------------------"
 		newdata =`python C:\\Users\\Evan\\Documents\\Github\\Capstone\\scripts\\bitstampAPI.py`
-		puts "------------------------Create Start---------------------------------" 
 		@bitstamp = Bitstamp.new(eval(newdata))
 		@bitstamp.save
 		sleep(3)
+		i=i+1
 	end
 	"""
     respond_to do |format|

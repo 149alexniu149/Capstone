@@ -1,0 +1,10 @@
+  <!-- creates new records-->
+  
+	<%puts "--------------------------Multiple API Call------------------------"%>
+	<%thread1=Thread.new%>{Bitfinex.create}
+	<%thread2=thread.new%>{Bitstamp.create}
+	
+	<%thread1.join%>
+	<%thread2.join%>
+	
+ <%end%>
