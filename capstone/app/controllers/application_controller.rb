@@ -6,19 +6,40 @@ class ApplicationController < ActionController::Base
   helper_method :runExchanges
   
   def runExchanges
-		i=0
-		while i < 10
-			puts "-----------------------------Bitstamp New---------------------------"
-			newdata =`python C:\\Users\\Evan\\Documents\\Github\\Capstone\\scripts\\bitstampAPI.py`
-			@bitstamp = Bitstamp.new(eval(newdata))
-			@bitstamp.save
-			
-			puts "------------------------Bitfinex New---------------------------------" 
-			newdata =`python C:\\Users\\Evan\\Documents\\Github\\Capstone\\scripts\\bitfinexAPI.py`
-			@bitfinex = Bitfinex.new(eval(newdata))
-			@bitfinex.save
-			
-			sleep(1)
-		end
+		
+		#puts "--------------------------Running Exchanges---------------------------"
+		bitfinThread=Thread.new{getBitfinex()}
+		bitstThread=Thread.new{getBitstamp()}
+		
+		bitfinThread.join()
+		bitstThread.join()
+		
+		
+		
   end
+end
+
+def getBitfinex
+
+	while true
+		#puts "------------------------Bitfinex New---------------------------------" 
+		newdata =`python C:\\Users\\Evan\\Documents\\Github\\Capstone\\scripts\\bitfinexAPI.py`
+		
+		@bitfinex = Bitfinex.new(eval(newdata))
+		@bitfinex.save
+			
+		sleep(1)
+	end
+end
+
+def getBitstamp
+	while true 
+		#puts "-----------------------------Bitstamp New---------------------------"
+		newdata =`python C:\\Users\\Evan\\Documents\\Github\\Capstone\\scripts\\bitstampAPI.py`
+		
+		@bitstamp = Bitstamp.new(eval(newdata))
+		@bitstamp.save
+		
+		sleep(1)
+	end
 end
