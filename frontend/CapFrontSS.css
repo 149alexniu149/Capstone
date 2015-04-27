@@ -1,0 +1,115 @@
+/*CapFrontSS.css*/
+
+
+
+body{
+/*background-image: url(bitcoin-gold.jpg);/*in case you want the bit coin picture*/
+background-color: #222;
+background-attachment:fixed;
+web-ms-text-size-adjust;100%;
+/*background-size: 100%*/
+
+/*makes columm
+-webkit-column-count: 2; /* Chrome, Safari, Opera 
+    -moz-column-count: 2; /* Firefox 
+    column-count: 2;
+    -webkit-column-width: 40px; /* Chrome, Safari, Opera 
+    -moz-column-width: 40px; /* Firefox 
+    column-width: 40px;*/
+}
+h1{
+	color:#E0E0E3;
+	text-align: center;
+	font-size:56px;
+	font-family:serif;
+	font-weight: lighter;
+}
+p{
+	color: #E0E0E3;
+}
+section{
+	width: 150;
+
+}
+div{
+	
+	position: relative;
+    
+    top: 100px;
+    left: -5px;
+    /*top:70px;
+	right: 73px;
+	position: fixed;*/
+}
+ 
+#Bitfinex{
+	position: absolute;
+    top:125px;
+    left:150px;
+    
+}
+
+#BitStamp{
+	position: absolute;
+    top:0px;
+    left: 425px;
+    
+}
+
+#OtherBit{
+	position: absolute;
+	top:0px;
+    left: 385px;
+    
+
+	/*text-align: left;
+	vertical-align: text-top;
+	color: #222;*/
+}
+.BFdropdown{
+	background-color:#fff;
+	position: absolute;
+	top: 25px;
+	color: #fff;
+}
+#BFdropdown{
+	color: #E0E0E3;
+}
+.BSdropdown{
+	background-color:#fff;
+	position: absolute;
+	top: 25px;
+	
+}
+#BSdropdown{
+	color: #E0E0E3
+}
+.OBdropdown{
+	background-color:#fff;
+	position: absolute;
+	top: 25px;
+	
+}
+#OBdropdown{
+	color: #E0E0E3
+}
+.dropdown{
+	color: #fff
+}
+
+.btn{
+	background-color: #333;
+	border-color: transparent;
+	outline-color: transparent;
+	
+
+}
+.dropdown-menu{
+	background-color: transparent;
+	color: #222;
+}
+.divider{
+	color:#E0E0E3; 
+}
+
+
