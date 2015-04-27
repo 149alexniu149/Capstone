@@ -46,8 +46,8 @@ $(function () {
                                 y = Math.random();
                                 z = Math.random();
                                 w = Math.random();
-                            series.addPoint([x, y], true, true);
-                            series2.addPoint([x, z], true, true);
+                            series.addPoint([x, y], false, true);
+                            series2.addPoint([x, z], false, true);
                             series3.addPoint([x,w], true, true);
                         }, 1000);
                     }
