@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   resources :btces
 
-  get 'bitfinexes/new'
-  get 'bitstamps/new'
+  #get 'bitfinexes/new'
+  #get 'bitstamps/new'
   resources :bitstamps
   resources :bitfinexes
 	  # The priority is based upon order of creation: first created -> highest priority.

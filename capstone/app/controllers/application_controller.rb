@@ -14,8 +14,6 @@ class ApplicationController < ActionController::Base
 		bitfinThread.join()
 		bitstThread.join()
 		
-		
-		
   end
 end
 
@@ -28,7 +26,7 @@ def getBitfinex
 		@bitfinex = Bitfinex.new(eval(newdata))
 		@bitfinex.save
 			
-		sleep(1)
+		sleep(10)
 	end
 end
 
@@ -40,6 +38,13 @@ def getBitstamp
 		@bitstamp = Bitstamp.new(eval(newdata))
 		@bitstamp.save
 		
-		sleep(1)
+		sleep(10)
 	end
+end
+
+def getLast
+
+	record=Bitstamp.last
+	puts "-------------------------TEST--------------------------"
+	return record
 end

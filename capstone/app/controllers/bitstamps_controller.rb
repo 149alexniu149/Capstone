@@ -16,17 +16,18 @@ class BitstampsController < ApplicationController
   # GET /bitstamps/new
   def new
     
-	
-	i=0
+
+	#TEMPORARY SOLUTION, when new is called rails loads view
+	i=0 
 	while i < 2
 		
-		puts "-----------------------------Bitstamp New---------------------------"
-		newdata =`python C:\\Users\\Evan\\Documents\\Github\\Capstone\\scripts\\bitstampAPI.py`
-		@bitstamp = Bitstamp.new(eval(newdata))
-		@bitstamp.save
-		sleep(3)
+	
+#		newdata =`python C:\\Users\\Evan\\Documents\\Github\\Capstone\\scripts\\bitstampAPI.py`
+#		@bitstamp = Bitstamp.new(eval(newdata))
+#		@bitstamp.save
+#		sleep(3)
 		i=i+1
-	end
+	end 
 	"""
     respond_to do |format|
       if @bitstamp.save
@@ -94,4 +95,9 @@ class BitstampsController < ApplicationController
     def bitstamp_params
       params.require(:bitstamp).permit(:timestamp, :avgprice, :bid, :ask, :volume)
     end
+	
+	#test
+	def to_s
+		"Timestamp:#{self.timestamp} Avg:#{self.avgprice} Bid: #{self.bid} Ask: #{self.ask} Volume:#{self.volume}"
+	end
 end

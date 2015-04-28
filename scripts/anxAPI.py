@@ -1,17 +1,16 @@
-# Python 2.7.6. WBN Calling exchange APIs. 
 import time, json, requests
-#timestamp is a dummy get system time
-#clean this code up
 
 dbparams=["timestamp:'1',",'avgprice:','bid:','ask:','volume:']
-apiparams=['mid','bid','ask','volume']
+apiparams=['avg','buy','sell','vol']
 dataList=[]
 s="{"+dbparams[0]
-bitFinexTick = requests.get("https://api.bitfinex.com/v1/pubticker/btcusd")
+anxTick = requests.get("https://anxpro.com/api/2/BTCUSD/money/ticker")
 counter=1
 for i in apiparams:
-    temp=str(bitFinexTick.json()[i])
-    if i=='volume':
+    #due to api format, the values are stored in 'data' and the 'value'
+    #is what we need
+    temp=str(anxTick.json()['data'][i]['value'])
+    if i=='vol':
         temp=temp[0:temp.index('.')]
     s=s+dbparams[counter]+temp
     if i!='volume':
@@ -19,6 +18,3 @@ for i in apiparams:
     counter=counter+1
 s=s+"}"
 print s
-
-
-

@@ -28,7 +28,7 @@ $(function () {
         });
  
         var chart;
-        $('#container').highcharts({
+		$('#container').highcharts({
             chart: {
                 type: 'line',
                 animation: Highcharts.svg, // don't animate in old IE
@@ -40,15 +40,21 @@ $(function () {
                         var series = this.series[0];
                         var series2 = this.series[1];
                         var series3 = this.series[2];
-                        
+						
+                        var k=0;
                         setInterval(function() {
+							var bitFiniexPrice=[15,17,22,23,21,21,19,18,16,20,23,24,26,30,36,35,36,34,33,34,29,30,16,20,23,24,26,30,36,35,36,34,26,30,23,24,26,21,19,18,16,20,24,29,30,16,29,30,16,20,23,24,26];
+							var bitStampPrice=[21,19,18,16,20,23,26,30,36,34,29,30,16,29,30,16,20,23,24,26,30,36,35,36,34,26,30,23,24,26,21,19,18,16,20,16,20,23,24,26,30,36,35,23,24,26,21,19,18,30,16,22,21];
+							var otherPrice=[24,26,30,36,35,36,34,33,36,34,29,30,16,26,30,36,35,24,26,21,19,18,16,20,16,20,20,23,24,30,23,24,26,21,19,18,16,30,16,20,23,24,21,19,18,16,20,23,35,23,36,34,26,30];
+        
                             var x = (new Date()).getTime(), // current time
-                                y = Math.random();
-                                z = Math.random();
-                                w = Math.random();
+                                y = bitFiniexPrice[k];
+                                z = bitStampPrice[k];
+                                w = otherPrice[k];
                             series.addPoint([x, y], false, true);
                             series2.addPoint([x, z], false, true);
                             series3.addPoint([x,w], true, true);
+							k++;
                         }, 1000);
                     }
                 }
@@ -115,7 +121,7 @@ $(function () {
                     for (i = -19; i <= 0; i++) {
                         data.push({
                             x: time + i * 1000,
-                            y: Math.random()
+                            y: 30
                         });
                     }
                     return data;
@@ -128,12 +134,14 @@ $(function () {
                     var data = [],
                         time = (new Date()).getTime(),
                         i;
- 
+					var j=0, 				//counter
+					price=[10]
                     for (i = -19; i <= 0; i++) {
                         data.push({
                             x: time + i * 1000,
-                            y: Math.random()
+                            y: 10
                         });
+						j++;
                     }
                     return data;
                 })()
@@ -149,7 +157,7 @@ $(function () {
                     for (i = -19; i <= 0; i++) {
                         data.push({
                             x: time + i * 1000,
-                            y: Math.random()
+                            y: 20
                         });
                     }
                     return data;
